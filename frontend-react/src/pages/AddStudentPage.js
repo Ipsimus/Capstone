@@ -94,8 +94,8 @@ function AddStudentForm() {
             console.log(response);
             // If there is not a success then its alerts with the Error message from the server. 
             if(response.status !== 201){
-                return alert(response.Error)
                 console.log(response.Error);
+                return alert(response.Error)
             }
             // Otherwise success was returned. 
             alert("Your student has just been added. Please click the students button to see your new student")
