@@ -11,7 +11,7 @@ import RegisteredStudentsInClass from './pages/RegisteredStudentsInClass';
 import AddStudentToClass from './pages/AddStudentToClass';
 import EditStudentForm from './pages/EditStudentPage'
 import EditClassForm from './pages/EditClassPage';
-import RegistrationForm from './pages/RegistrationForm';
+import RegistrationFormStep1 from './pages/RegistrationForms/RegistrationFormStep1';
 
 function App() {
   return (
@@ -21,7 +21,9 @@ function App() {
         <div className="app-body">
             <Routes>
               <Route exact path='/' element={<HomePage/>}></Route>
-              <Route path='/registrationForm' element={<RegistrationForm />}></Route>
+              
+              <Route path='/registrationFormStep1' element={<RegistrationFormStep1 />}></Route>
+              
               <Route path='/students' element={<StudentPage />}></Route>
               <Route path='/studentAdd' element={<AddStudentForm />}></Route>
               <Route path='/editStudent' element={<EditStudentForm />}></Route>
