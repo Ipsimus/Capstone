@@ -11,7 +11,8 @@ import RegisteredStudentsInClass from './pages/RegisteredStudentsInClass';
 import AddStudentToClass from './pages/AddStudentToClass';
 import EditStudentForm from './pages/EditStudentPage'
 import EditClassForm from './pages/EditClassPage';
-import RegistrationFormStep1 from './pages/RegistrationForms/RegistrationFormStep1';
+import RegistrationForm from './pages/RegistrationForms/RegistrationForm';
+import RegistationFormProvider from './components/formContext/registrationFormContext';
 
 function App() {
   return (
@@ -19,21 +20,21 @@ function App() {
       <Router>
         <Navigation />
         <div className="app-body">
-            <Routes>
-              <Route exact path='/' element={<HomePage/>}></Route>
-              
-              <Route path='/registrationFormStep1' element={<RegistrationFormStep1 />}></Route>
-              
-              <Route path='/students' element={<StudentPage />}></Route>
-              <Route path='/studentAdd' element={<AddStudentForm />}></Route>
-              <Route path='/editStudent' element={<EditStudentForm />}></Route>
-              <Route path='/students/:studentID/class' element={<AddStudentToClass />}></Route>
-              <Route path='/classes' element={<ClassPage />}></Route>
-              <Route path='/classAdd' element={<AddClassForm />}></Route>
-              <Route path='/classEdit' element={<EditClassForm />}></Route>
-              <Route path='/classes/:classID/students' element={<RegisteredStudentsInClass />}></Route>
-            </Routes>
-          </div>
+          <Routes>
+            <Route exact path='/' element={<HomePage />}></Route>
+
+            <Route path='/registrationForm' element={<RegistrationForm />}></Route>
+
+            <Route path='/students' element={<StudentPage />}></Route>
+            <Route path='/studentAdd' element={<AddStudentForm />}></Route>
+            <Route path='/editStudent' element={<EditStudentForm />}></Route>
+            <Route path='/students/:studentID/class' element={<AddStudentToClass />}></Route>
+            <Route path='/classes' element={<ClassPage />}></Route>
+            <Route path='/classAdd' element={<AddClassForm />}></Route>
+            <Route path='/classEdit' element={<EditClassForm />}></Route>
+            <Route path='/classes/:classID/students' element={<RegisteredStudentsInClass />}></Route>
+          </Routes>
+        </div>
       </Router>
     </>
   );
