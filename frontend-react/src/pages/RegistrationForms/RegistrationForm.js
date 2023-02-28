@@ -18,16 +18,12 @@ function RegistrationForm() {
         <form>
             <center>
                 <h3>Multi step register form Step {page} / 3</h3>
-            
-                <div>
                 {
                     page === 1 ? <RegistrationFormStep1 /> : 
                     page === 2 ? <RegistrationFormStep2 /> : 
                     <RegistrationFormStep3 />
                 }
-                </div>
-            
-                
+                <br />
                 {
                     page === 3 ?
                     <button onSubmit={handleSubmit((data)=> console.log(data))} type="Submit">Submit Registration</button> :
