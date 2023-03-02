@@ -17,7 +17,7 @@ function RegistrationForm() {
         <FormProvider {...methods}>
         <form>
             <center>
-                <h3>Multi step register form Step {page} / 3</h3>
+            <h3>Multi step register form Step {page} / 3</h3>
                 {
                     page === 1 ? <RegistrationFormStep1 /> : 
                     page === 2 ? <RegistrationFormStep2 /> : 
@@ -26,7 +26,7 @@ function RegistrationForm() {
                 <br />
                 {
                     page === 3 ?
-                    <button onSubmit={handleSubmit((data)=> console.log(data))} type="Submit">Submit Registration</button> :
+                    <button onSubmit={handleSubmit((data)=> console.log(JSON.stringify(data)))} type="Submit">Submit Registration</button> :
                     null
                 }
             </center>

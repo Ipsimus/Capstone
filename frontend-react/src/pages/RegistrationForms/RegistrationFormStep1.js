@@ -18,8 +18,7 @@ function RegistrationFormStep1() {
 
     return (
         <div className="form-container">
-            <pre>{JSON.stringify(methods.getValues(), undefined, 2)}</pre>
-            <h1>Registration Form:</h1>
+            <h1>Registration Form Step 1:</h1>
             <input
                 {...methods.register('name', { required: true })}
                 name="name"
@@ -37,7 +36,7 @@ function RegistrationFormStep1() {
             <input
                 {...methods.register('id', { required: true })}
                 name="id"
-                placeholder="Current OSU ID Number"
+                placeholder="OSU ID Number"
                 type="text"
             />
             <br />

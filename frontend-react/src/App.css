@@ -7,6 +7,13 @@
   height: 40vmin;
   pointer-events: none;
 }
+.form-container {
+  text-align: center
+}
+
+.form-container-2 {
+  text-align: justify;
+}
 
 .App-header {
   background-color: #282c34;

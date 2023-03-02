@@ -8,6 +8,7 @@ function Navigation() {
             <a className="navbar-brand" href="/classes">Classes</a>
             <a className="navbar-brand" href="/students">Students</a>
             <a className="navbar-brand" href="/registrationForm">Registration Form</a>
+            <a className="navbar-brand" href="/updateYear">Update Registration Year</a>
           </div>
         </nav>
     )

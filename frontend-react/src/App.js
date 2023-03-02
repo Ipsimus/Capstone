@@ -13,6 +13,7 @@ import EditStudentForm from './pages/EditStudentPage'
 import EditClassForm from './pages/EditClassPage';
 import RegistrationForm from './pages/RegistrationForms/RegistrationForm';
 import RegistationFormProvider from './components/formContext/registrationFormContext';
+import UpdateRegistrationYearForm from './pages/UpdateRegistrationYear';
 
 function App() {
   return (
@@ -32,7 +33,9 @@ function App() {
             <Route path='/classes' element={<ClassPage />}></Route>
             <Route path='/classAdd' element={<AddClassForm />}></Route>
             <Route path='/classEdit' element={<EditClassForm />}></Route>
+            <Route path='/updateYear' element={<UpdateRegistrationYearForm />}></Route>
             <Route path='/classes/:classID/students' element={<RegisteredStudentsInClass />}></Route>
+            
           </Routes>
         </div>
       </Router>
