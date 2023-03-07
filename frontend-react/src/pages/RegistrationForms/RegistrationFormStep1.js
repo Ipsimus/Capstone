@@ -18,11 +18,18 @@ function RegistrationFormStep1() {
 
     return (
         <div className="form-container">
-            <h1>Registration Form Step 1:</h1>
+            <h2>Member General Info</h2>
             <input
-                {...methods.register('name', { required: true })}
-                name="name"
-                placeholder="Your Name"
+                {...methods.register('fName', { required: true })}
+                name="fName"
+                placeholder="Your First Name"
+                type="text"
+            />
+            <br />
+            <input
+                {...methods.register('lName', { required: true })}
+                name="lName"
+                placeholder="Your Last Name"
                 type="text"
             />
             <br />
@@ -34,22 +41,29 @@ function RegistrationFormStep1() {
             />
             <br />
             <input
-                {...methods.register('id', { required: true })}
-                name="id"
+                {...methods.register('OSUID', { required: true })}
+                name="OSUID"
                 placeholder="OSU ID Number"
                 type="text"
             />
             <br />
             <input
-                {...methods.register('phoneNumber', { required: true })}
-                name="phoneNumber"
+                {...methods.register('phone', { required: true })}
+                name="phone"
                 placeholder="Phone Number"
-                type="int"
+                type="text"
             />
             <br />
             <input
-                {...methods.register('streetAddress', { required: true })}
-                name="streetAddress"
+                {...methods.register('email', { required: true })}
+                name="email"
+                placeholder="Email"
+                type="email"
+            />
+            <br />
+            <input
+                {...methods.register('address', { required: true })}
+                name="address"
                 placeholder="Street Address"
                 type="text"
             />

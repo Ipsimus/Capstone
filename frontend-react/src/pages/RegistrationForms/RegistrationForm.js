@@ -10,14 +10,14 @@ function RegistrationForm() {
 
     const [page, setPage] = useState(1);
     const methods = useForm();
-    const { register, handleSubmit, errors } = methods;
+    const { register, handleSubmit, setError, formState: { errors } } = methods;
 
     return (
         <div>
         <FormProvider {...methods}>
         <form>
             <center>
-            <h3>Multi step register form Step {page} / 3</h3>
+            <h1>Winter Term 2023 - Student Membership - {page} / 3</h1>
                 {
                     page === 1 ? <RegistrationFormStep1 /> : 
                     page === 2 ? <RegistrationFormStep2 /> : 

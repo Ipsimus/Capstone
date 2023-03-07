@@ -35,23 +35,66 @@ def students_get_post():
         # create a student based on given parameters, tell user if they don't have it correct
         content = request.get_json()
         new_student = datastore.entity.Entity(key=client.key(constants.students))
-        if len(content) == 3:
-            if current_students_email_check(content["email"]):
-                return ({'Error': 'This student already exists'}, 403)
+        # if statement needs to be replaced with some validation:
+        # if len(content) == 3:
+        # This can also be a part of validation - should be implemented. 
+        # if current_students_email_check(content["email"]):
+        #     return ({'Error': 'This student already exists'}, 403)
 
-            new_student.update({"OSUID": content["OSUID"], "name": content["name"], "email": content["email"], 
-                                "notes": [], "membership": [], "classes_taken": [], "locker": None})
-            client.put(new_student)
-            new_student['id'] = new_student.key.id
-            new_student.update({"self": f"{APP_URL}/students/{new_student.key.id}"})
-            client.put(new_student)
-            res = make_response(json.dumps(new_student))
-            res.headers.set("Access-Control-Allow-Origin", "*")
-            res.status_code = 201
-            print(res)
-            return res
-        else:
-            return ({'Error': 'The request object is missing at least one of the required attributes'}, 400)
+        new_student.update({
+            # Step 1 of Registration Form: General Info
+            "fName": content["fName"],
+            "lName": content["lName"],
+            "pronouns": content["pronouns"],
+            "OSUID": content["OSUID"],
+            "phone": content["phone"],
+            "email": content["email"],
+            "address": content["address"],
+            "city": content["city"],
+            "state": content["state"],
+            "zip": content["zip"],
+            # Step 2 of Registration Form: Policies
+            "semesterDisclosure": content["semesterDisclosure"],
+            "policiesDisclosure": content["policiesDisclosure"],
+            "injuryDisclosure": content["injuryDisclosure"],
+            "machineDisclosure": content["machineDisclosure"],
+            "photoDisclosure": content["photoDisclosure"],
+            "refundDisclosure": content["refundDisclosure"],
+            "cancellationDisclosure": content["cancellationDisclosure"],
+            "lockerDisclosure": content["lockerDisclosure"],
+            "liabilityDisclosure": content["liabilityDisclosure"],
+            "accessibilityDisclosure": content["accessibilityDisclosure"],
+            # Step 3 of Registration Form: Interests & Sign Off
+            "activityCeramics": content["activityCeramics"],
+            "pastMemberQuestion": content["pastMemberQuestion"],
+            "activityWoodWorking": content["activityWoodWorking"],
+            "activityGlassArt": content["activityGlassArt"],
+            "activityFabricArt": content["activityFabricArt"],
+            "activityPaperArt": content["activityPaperArt"],
+            "activityPainting": content["activityPainting"],
+            "advertFriend": content["advertFriend"],
+            "advertStaff": content["advertStaff"],
+            "advertEvent": content["advertEvent"],
+            "advertAd": content["advertAd"],
+            "signature": content["signature"],
+            # Fields meant for additional tracking.
+            "notes": [],
+            "membership": [],
+            "classes_taken": [],
+            "locker": None
+        })
+        client.put(new_student)
+        new_student['id'] = new_student.key.id
+        new_student.update({"self": f"{APP_URL}/students/{new_student.key.id}"})
+        res = make_response(json.dumps(new_student))
+        res.headers.set("Access-Control-Allow-Origin", "*")
+        res.status_code = 201
+        print(res)
+        return res
+
+        # Validation needs to be added, cannot just be based on content size. 
+        # else:
+        #     return ({'Error': 'The request object is missing at least one of the required attributes'}, 400)
         
     elif request.method == 'GET':
         query = client.query(kind=constants.students)

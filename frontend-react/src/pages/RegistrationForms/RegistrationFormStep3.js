@@ -8,7 +8,7 @@ function RegistrationFormStep3() {
     return (
         <div className="form-container-3">
             <pre>{JSON.stringify(methods.getValues(), undefined, 2)}</pre>
-            <h1 className="form-container">Registration Form Step 3:</h1>
+            <h2 className="form-container">Interests & Sign Off</h2>
             <p>
                 Check the box if you have been a member with us in the past. 
             <input 
@@ -24,7 +24,7 @@ function RegistrationFormStep3() {
             <p>
                 Ceramics
             <input 
-                {...methods.register('activityCeramics', {required: true})}
+                {...methods.register('activityCeramics', {required: false})}
                 name="activityCeramics"
                 type="checkbox" 
             />
@@ -32,7 +32,7 @@ function RegistrationFormStep3() {
             <p>
                 Wood Working
             <input 
-                {...methods.register('activityWoodWorking', {required: true})}
+                {...methods.register('activityWoodWorking', {required: false})}
                 name="activityWoodWorking"
                 type="checkbox" 
             />
@@ -40,7 +40,7 @@ function RegistrationFormStep3() {
             <p>
                 Glass Art
             <input 
-                {...methods.register('activityGlassArt', {required: true})}
+                {...methods.register('activityGlassArt', {required: false})}
                 name="activityGlassArt"
                 type="checkbox" 
             />
@@ -48,7 +48,7 @@ function RegistrationFormStep3() {
             <p>
                 Fabric Art
             <input 
-                {...methods.register('activityFabricArt', {required: true})}
+                {...methods.register('activityFabricArt', {required: false})}
                 name="activityFabricArt"
                 type="checkbox" 
             />
@@ -56,7 +56,7 @@ function RegistrationFormStep3() {
             <p>
                 Paper Art
             <input 
-                {...methods.register('activityPaperArt', {required: true})}
+                {...methods.register('activityPaperArt', {required: false})}
                 name="activityPaperArt"
                 type="checkbox" 
             />
@@ -64,7 +64,7 @@ function RegistrationFormStep3() {
             <p>
                 Painting
             <input 
-                {...methods.register('activityPainting', {required: true})}
+                {...methods.register('activityPainting', {required: false})}
                 name="activityPainting"
                 type="checkbox" 
             />
@@ -76,7 +76,7 @@ function RegistrationFormStep3() {
             <p>
                 Friend
             <input 
-                {...methods.register('advertFriend', {required: true})}
+                {...methods.register('advertFriend', {required: false})}
                 name="advertFriend"
                 type="checkbox" 
             />
@@ -84,7 +84,7 @@ function RegistrationFormStep3() {
             <p>
                 Staff
             <input 
-                {...methods.register('advertStaff', {required: true})}
+                {...methods.register('advertStaff', {required: false})}
                 name="advertStaff"
                 type="checkbox" 
             />
@@ -92,7 +92,7 @@ function RegistrationFormStep3() {
             <p>
                 Event   
             <input 
-                {...methods.register('advertEvent', {required: true})}
+                {...methods.register('advertEvent', {required: false})}
                 name="advertEvent"
                 type="checkbox" 
             />
@@ -100,7 +100,7 @@ function RegistrationFormStep3() {
             <p>
                 Ad        
             <input 
-                {...methods.register('advertAd', {required: true})}
+                {...methods.register('advertAd', {required: false})}
                 name="advertAd"
                 type="checkbox" 
             />

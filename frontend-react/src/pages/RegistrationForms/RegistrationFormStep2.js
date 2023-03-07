@@ -8,7 +8,7 @@ function RegistrationFormStep2() {
     return (
         <div className="form-container-2">
             <pre>{JSON.stringify(methods.getValues(), undefined, 2)}</pre>
-            <h1 className="form-container">Registration Form Step 2:</h1>
+            <h2 className="form-container">Craft Center Policies</h2>
             <p>The following attestations are required. Please ackowledge the following content to continue.</p>
             <p>"I attest that I am either a Winter 2023 student incidental fee-paying student or a non-fee paying student and will pay the $40 membership fee.
                 At this time we are students only. Please initial below."
