@@ -28,7 +28,6 @@ def current_students_email_check(student_email):
     
     return False
 
-
 @bp.route('', methods=['POST', 'GET', 'OPTIONS', 'PUT', 'DELETE'])
 def students_get_post():
     if request.method == 'POST':

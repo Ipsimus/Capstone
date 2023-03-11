@@ -83,8 +83,8 @@ function RegistrationFormStep1() {
             />
             <br />
             <input
-                {...methods.register('zipCode', { required: true })}
-                name="zipCode"
+                {...methods.register('zip', { required: true })}
+                name="zip"
                 placeholder="Zip Code"
                 type="text"
             />
