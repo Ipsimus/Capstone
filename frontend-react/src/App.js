@@ -12,8 +12,10 @@ import AddStudentToClass from './pages/AddStudentToClass';
 import EditStudentForm from './pages/EditStudentPage'
 import EditClassForm from './pages/EditClassPage';
 import RegistrationForm from './pages/RegistrationForms/RegistrationForm';
-import RegistationFormProvider from './components/formContext/registrationFormContext';
 import UpdateRegistrationYearForm from './pages/UpdateRegistrationYear';
+
+// Update this to the base Url used in testing or hosting.
+const API_URL = "http://127.0.0.1:8080"
 
 function App() {
   return (
@@ -23,9 +25,7 @@ function App() {
         <div className="app-body">
           <Routes>
             <Route exact path='/' element={<HomePage />}></Route>
-
             <Route path='/registrationForm' element={<RegistrationForm />}></Route>
-
             <Route path='/students' element={<StudentPage />}></Route>
             <Route path='/studentAdd' element={<AddStudentForm />}></Route>
             <Route path='/editStudent' element={<EditStudentForm />}></Route>
@@ -44,3 +44,4 @@ function App() {
 }
 
 export default App;
+export { API_URL };

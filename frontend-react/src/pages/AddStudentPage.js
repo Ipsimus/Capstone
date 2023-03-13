@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { API_URL } from "../App";
 import isIdValid, {isNameValid, isEmailValid} from "../functions/validation/addStudentValidation";
 
 function AddStudentForm() {
@@ -81,7 +82,7 @@ function AddStudentForm() {
             return;
         }
         
-        fetch('https://garzacao-capstone.uc.r.appspot.com/students', {
+        fetch(API_URL + '/students', {
             method: 'POST',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({

@@ -41,7 +41,8 @@ function UpdateRegistrationYearForm() {
         <div>
             <div id="update_term">
                 <h1>Update Registration Year:</h1>
-                <pre>{JSON.stringify(termInfo, undefined, 2)}</pre>
+                {/* The below whos the termInfo data in real time. */}
+                {/* <pre>{JSON.stringify(termInfo, undefined, 2)}</pre> */}
                 <p>Enter the year to update the student registration form.</p>
                 <form onSubmit={handleSubmit}>
                     <label>Enter a Year: </label>

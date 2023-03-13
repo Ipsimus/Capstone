@@ -1,26 +1,25 @@
 import { useState } from "react";
 import useFetch from "react-fetch-hook";
+import { API_URL } from "../../App";
 import RegistrationFormStep1 from "./RegistrationFormStep1";
 import RegistrationFormStep2 from "./RegistrationFormStep2";
 import RegistrationFormStep3 from "./RegistrationFormStep3";
 
 import {useForm, FormProvider } from "react-hook-form";
 
-
 function RegistrationForm(){
 
-    const apiUrl = 'http://127.0.0.1:8080/term';
     const [page, setPage] = useState(1);
 
     const methods = useForm();
     const { register, handleSubmit, setError, formState: { errors } } = methods;
     
-    const { isLoading, error,  data } = useFetch(apiUrl);
+    const { isLoading, error,  data } = useFetch(API_URL + '/term');
     // console.log(isLoading, data);
 
     const onSubmit = (upload, event) => {
         event.preventDefault();
-        fetch('http://127.0.0.1:8080/students', {
+        fetch(API_URL + '/students', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(upload)
@@ -38,7 +37,7 @@ function RegistrationForm(){
     if(isLoading) return <div><p>"Loading Please Wait!</p></div>
     if(error){
         console.log(error);
-        return <div><p>"I'm sorry and erorr occurred!"</p></div>
+        return <div><p>"I'm sorry an erorr occurred!"</p></div>
     }
     return (
         <div>

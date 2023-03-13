@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { API_URL } from "../App";
 import validateClassInput from "../functions/validation/addClassValidation";
 
 function AddClassForm() {
@@ -27,7 +28,7 @@ function AddClassForm() {
     function handleSubmit(event){ 
         event.preventDefault();
         alert("Your class is being added. Please click the classes button to see your new class")
-        fetch('https://garzacao-capstone.uc.r.appspot.com/classes', {
+        fetch(API_URL + '/classes', {
             method: 'post',
             headers: {'Content-Type':'application/json', "Access-Control-Allow-Origin": "*"},
             body: JSON.stringify({

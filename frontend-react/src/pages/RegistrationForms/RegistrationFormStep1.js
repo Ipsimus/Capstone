@@ -4,16 +4,6 @@ import { useFormContext } from 'react-hook-form';
 
 function RegistrationFormStep1() {
 
-    // const { register, handleSubmit, errors } = useForm();
-    // const [userInfo, setUserInfo] = useState();
-
-    // const onSubmitData = (data) => {
-
-    //     setUserInfo(data);
-    //     console.log(data);
-
-    // }
-
     const methods = useFormContext();
 
     return (
@@ -92,26 +82,5 @@ function RegistrationFormStep1() {
         </div>
     )
 }
-
-
-// function handleSubmit(event){ 
-//     event.preventDefault();
-//     alert("Thank you for submitting. OSU Crafter Center will process your registration.")
-//     fetch('https://garzacao-capstone.uc.r.appspot.com/registrationForm', {
-//         method: 'post',
-//         headers: {'Content-Type':'application/json', "Access-Control-Allow-Origin": "*"},
-//         body: JSON.stringify({
-//             "name": this.name.value,
-//             "pronouns": this.pronouns.value,
-//             "OSUID": this.OSUID.value,
-//             "phoneNumber": this.phoneNumber.value,
-//             "streetAddress": this.streetAddress.value,
-//             "city": this.city.value,
-//             "state": this.state.value,
-//             "zipCode": this.zipCode.value
-//             })
-//         }
-//     );
-// };
 
 export default RegistrationFormStep1;

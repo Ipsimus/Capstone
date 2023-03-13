@@ -37,8 +37,8 @@ def students_get_post():
         # if statement needs to be replaced with some validation:
         # if len(content) == 3:
         # This can also be a part of validation - should be implemented. 
-        # if current_students_email_check(content["email"]):
-        #     return ({'Error': 'This student already exists'}, 403)
+        if current_students_email_check(content["email"]):
+            return ({'Error': 'This student already exists'}, 403)
 
         new_student.update({
             # Step 1 of Registration Form: General Info

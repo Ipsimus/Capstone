@@ -7,7 +7,7 @@ function RegistrationFormStep3() {
     
     return (
         <div className="form-container-3">
-            <pre>{JSON.stringify(methods.getValues(), undefined, 2)}</pre>
+            {/* <pre>{JSON.stringify(methods.getValues(), undefined, 2)}</pre> */}
             <h2 className="form-container">Interests & Sign Off</h2>
             <p>
                 Check the box if you have been a member with us in the past. 
