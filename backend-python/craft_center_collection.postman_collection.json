@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "d457cd54-748d-4f8b-8ccb-5d1e798f4eb5",
-		"name": "craft_center_collection",
+		"_postman_id": "20ded095-25ca-4d9d-9311-ce8faf984db4",
+		"name": "capstone-f22",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "25907443"
+		"_exporter_id": "23508032"
 	},
 	"item": [
 		{
@@ -42,7 +42,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"OSUID\": \"lastnameF\",\r\n  \"name\": \"Firstname LastName\",\r\n  \"email\": \"lastnameF@oregonstate.edu\"\r\n}",
+					"raw": "{\r\n    \"fName\": \"Bob\",\r\n    \"lName\": \"Bobber\",\r\n    \"pronouns\": \"He, Him\",\r\n    \"OSUID\": \"123456789\",\r\n    \"phone\": \"123-456-7890\",\r\n    \"email\": \"person@mail.com\",\r\n    \"address\": \"123 Somewhere St.\",\r\n    \"city\": \"Nowhere\",\r\n    \"state\": \"TX\",\r\n    \"zip\": \"79760\",\r\n    \r\n    \"semesterDisclosure\": true,\r\n    \"policiesDisclosure\": true,\r\n    \"injuryDisclosure\": true,\r\n    \"machineDisclosure\": true,\r\n    \"photoDisclosure\": true,\r\n    \"refundDisclosure\": true,\r\n    \"cancellationDisclosure\": true,\r\n    \"lockerDisclosure\": true,\r\n    \"liabilityDisclosure\": true,\r\n    \"accessibilityDisclosure\": true,\r\n    \r\n    \"activityCeramics\": true,\r\n    \"pastMemberQuestion\": false,\r\n    \"activityWoodWorking\": false,\r\n    \"activityGlassArt\": false,\r\n    \"activityFabricArt\": false,\r\n    \"activityPaperArt\": false,\r\n    \"activityPainting\": false,\r\n    \"advertFriend\": false,\r\n    \"advertStaff\": false,\r\n    \"advertEvent\": false,\r\n    \"advertAd\": true,\r\n    \"signature\": \"Bob Bobber\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -248,6 +248,78 @@
 					"path": [
 						"students",
 						"{{student_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get only Term",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"200 status code\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{app_url}}/term",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"term"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Replace Term",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"204 status code\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"year\": 2023,\r\n  \"term\": \"Winter\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{app_url}}/term",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"term"
 					]
 				}
 			},
