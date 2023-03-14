@@ -15,7 +15,7 @@ import RegistrationForm from './pages/RegistrationForms/RegistrationForm';
 import UpdateRegistrationYearForm from './pages/UpdateRegistrationYear';
 
 // Update this to the base Url used in testing or hosting.
-const API_URL = "http://127.0.0.1:8080"
+const API_URL = "https://garzacao-capstone.uc.r.appspot.com"
 
 function App() {
   return (

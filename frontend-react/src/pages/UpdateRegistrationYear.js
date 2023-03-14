@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { API_URL } from "../App";
 
 function UpdateRegistrationYearForm() {
 
@@ -22,7 +23,7 @@ function UpdateRegistrationYearForm() {
 
     function handleSubmit(event){
         event.preventDefault();
-        fetch('http://127.0.0.1:8080/term', {
+        fetch(API_URL + '/term', {
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(termInfo)

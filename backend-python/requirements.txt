@@ -1,3 +1,4 @@
 Flask
 flask
+Flask-Cors>=3.0
 google-cloud-datastore==2.13.2
